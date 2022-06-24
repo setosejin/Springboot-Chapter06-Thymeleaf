@@ -1,14 +1,19 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html data-theme="pastel" xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/daisyui@2.17.0/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
 <head>
 	<title>새 글 등록</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body th:align="center">
-<h1>게시글 등록</h1>
+<div class="navbar bg-accent text-primary-content mb-10 text-center">
+	<div class="navbar-start"></div>
+	<div class="navbar-center text-xl">게시글 등록</div>
+	<div class="navbar-end"></div>
+</div>
 <form th:action="insertBoard" method="post">
-<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">				
+<table class="table border-t border-base-300" th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">
 	<tr>
 		<td bgcolor="orange" th:text="제목" width="80"></td>
 		<td><input name="title" type="text" size="50"></td>
@@ -23,11 +28,11 @@
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<input type="submit" value="게시글 등록">
+			<input class="btn btn-outline btn-lg m-10"  type="submit" value="게시글 등록">
 		</td>
 	</tr>
 </table>
 </form>	
-<a th:href="@{/getBoardList}">글 목록</a>
+<a class="btn btn-outline btn-lg m-10" th:href="@{/getBoardList}">글 목록</a>
 </body>
 </html>

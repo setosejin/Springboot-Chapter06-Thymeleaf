@@ -1,15 +1,20 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html data-theme="pastel" xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/daisyui@2.17.0/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
 <head>
 	<title>게시 글 상세</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body th:align="center">
-<h1>게시글 상세</h1>
+<div class="navbar bg-secondary text-primary-content mb-10 text-center">
+	<div class="navbar-start"></div>
+	<div class="navbar-center text-xl">게시글 상세</div>
+	<div class="navbar-end"></div>
+</div>
 <form th:action="@{updateBoard}" method="post">
 	<input name="seq" type="hidden" th:value="${board.seq}">
-	<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">
+	<table class="table border-t border-base-300" th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">
 		<tr>
 			<td bgcolor="orange" th:text="제목" width="80"></td>
 			<td><input name="title" type="text" th:value="${board.title}"></td>
@@ -32,14 +37,16 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<input type="submit" value="게시글 수정">
+				<input class="btn btn-outline btn-lg m-10" type="submit" value="게시글 수정">
 			</td>
 		</tr>
 	</table>
-</form> 
-
-<a th:href="@{/insertBoard}">글 등록</a>&nbsp;&nbsp;&nbsp;
-<a th:href="@{/deleteBoard(seq=${board.seq})}">글 삭제</a>&nbsp;&nbsp;&nbsp;
-<a th:href="@{/getBoardList}">글 목록</a>
+</form>
+<div >
+	<a class="btn btn-lg" th:href="@{/insertBoard}">글 등록</a>
+	<a class="btn btn-lg" th:href="@{/deleteBoard(seq=${board.seq})}">글 삭제</a>
+	<a class="btn btn-lg" th:href="@{/getBoardList}">글 목록</a>
+</div>
 </body>
+
 </html>
