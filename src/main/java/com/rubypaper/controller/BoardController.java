@@ -18,6 +18,12 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 
+	@GetMapping("/hello")
+	public String hello(Model model) {
+		model.addAttribute("greeting", "Hello World");
+		return "hello";
+	}
+
 	@RequestMapping("/getBoardList")
 	public String getBoardList(Model model, Board board) {
 		List<Board> boardList = boardService.getBoardList(board);
