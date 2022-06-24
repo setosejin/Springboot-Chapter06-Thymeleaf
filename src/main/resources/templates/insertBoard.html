@@ -13,7 +13,7 @@
 	<div class="navbar-end"></div>
 </div>
 <form th:action="insertBoard" method="post">
-<table class="table border-t border-base-300" th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">
+<table class="table border-t border-base-300 mt-10" th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">
 	<tr>
 		<td bgcolor="orange" th:text="제목" width="80"></td>
 		<td><input name="title" type="text" size="50"></td>
@@ -33,6 +33,6 @@
 	</tr>
 </table>
 </form>	
-<a class="btn btn-outline btn-lg m-10" th:href="@{/getBoardList}">글 목록</a>
+<a class="btn btn-lg btn-outline btn-accent" th:href="@{/getBoardList}">글 목록</a>
 </body>
 </html>

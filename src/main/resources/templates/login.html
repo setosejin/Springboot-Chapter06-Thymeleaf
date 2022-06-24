@@ -1,0 +1,33 @@
+<html data-theme="pastel" xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/daisyui@2.17.0/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<head>
+	<title>회원 로그인</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body th:align="center">
+<div class="navbar bg-accent text-primary-content mb-10 text-center">
+	<div class="navbar-start"></div>
+	<div class="navbar-center text-xl">로그인</div>
+	<div class="navbar-end"></div>
+</div>
+<form th:action="login" method="post">
+<table class="table mt-10" th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">
+	<tr>
+		<td bgcolor="orange" th:text="아이디"></td>
+		<td><input name="id" type="text" size="10"></td>
+	</tr>
+	<tr>
+		<td bgcolor="orange" th:text="비밀번호"></td>
+		<td><input name="password" type="password" size="10"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input class="btn btn-lg btn-outline btn-accent" type="submit" value="로그인">
+		</td>
+	</tr>
+</table>
+</form>	
+</body>
+</html>

@@ -14,7 +14,7 @@
 </div>
 <form th:action="@{updateBoard}" method="post">
 	<input name="seq" type="hidden" th:value="${board.seq}">
-	<table class="table border-t border-base-300" th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">
+	<table class="table border-t border-base-300 mt-10" th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">
 		<tr>
 			<td bgcolor="orange" th:text="제목" width="80"></td>
 			<td><input name="title" type="text" th:value="${board.title}"></td>
@@ -43,9 +43,9 @@
 	</table>
 </form>
 <div >
-	<a class="btn btn-lg" th:href="@{/insertBoard}">글 등록</a>
-	<a class="btn btn-lg" th:href="@{/deleteBoard(seq=${board.seq})}">글 삭제</a>
-	<a class="btn btn-lg" th:href="@{/getBoardList}">글 목록</a>
+	<a class="btn btn-lg btn-outline btn-primary" th:href="@{/insertBoard}">글 등록</a>
+	<a class="btn btn-lg btn-outline btn-secondary" th:href="@{/deleteBoard(seq=${board.seq})}">글 삭제</a>
+	<a class="btn btn-lg btn-outline btn-accent" th:href="@{/getBoardList}">글 목록</a>
 </div>
 </body>
 
